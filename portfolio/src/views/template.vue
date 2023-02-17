@@ -3,11 +3,12 @@ import video from '../assets/techVid.mp4';
 import homeComponent from '../components/home.vue'
 import {ref, reactive} from 'vue';
 const botoesHeader = reactive([
-    {nome:'Home', rota:''},
-    {nome:'Sobre', rota:''},
-    {nome:'Trabalhos', rota:''},
-    {nome:'Contato', rota:''},
+    {nome:'Home', rota:'/', video:''},
+    {nome:'Sobre', rota:'/sobre', video:''},
+    {nome:'Trabalhos', rota:'', video:''},
+    {nome:'Contato', rota:'', video:''},
 ])
+
 </script>
 
 <template>
@@ -19,18 +20,31 @@ const botoesHeader = reactive([
             style="max-height: 100vh; height: 100vh;"
             overlay="linear-gradient(45deg, #374ff714, #0000006b)" 
             >
-            
-            <homeComponent/>
+
+            <homeComponent v-if="$route.path == '/'"
+            titulo="Olá, seja bem vindo ao meu Portfólio!"
+            text="Conheça mais sobre mim e os meus trabalhos."
+            />
+
+            <homeComponent v-if="$route.path == '/sobre'"
+            titulo="Meu nome é Thiago Faria Moreira"
+            text="Sou desenvolvedor Front-End, apaixonado pelos processos do desenvolvimento web unido com a liberdade do design,
+            acredito que a união destes dois elementos é o que torna tudo tão belo no digital."
+            />
         
             <div class="positionDivTemplate">
-            <p
-            v-for="(botoes, i) in botoesHeader"
-            :key="i"
-            variant="text"
-            class="styleBotoes"
-            >
-            {{ botoes.nome }}
-            </p>
+            <router-link
+                style="text-decoration: none;"
+                v-for="(botoes, i) in botoesHeader"
+                :key="i"
+                :to="botoes.rota">
+                <p
+                variant="text"
+                class="styleBotoes"
+                >
+                {{ botoes.nome }}
+                </p>
+            </router-link>
         </div>
         </video-background>
         </v-row>
@@ -64,5 +78,8 @@ const botoesHeader = reactive([
     font-weight: 400;
     background-color: transparent;
     color: #f7f7f7;
+}
+.styleBotoes:hover{
+    color:#e2ad00;
 }
 </style>

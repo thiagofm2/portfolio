@@ -3,10 +3,10 @@ import video from '../assets/techVid.mp4';
 import homeComponent from '../components/home.vue'
 import {ref, reactive} from 'vue';
 const botoesHeader = reactive([
-    {nome:'Home', rota:'/', video:''},
-    {nome:'Sobre', rota:'/sobre', video:''},
-    {nome:'Trabalhos', rota:'/trabalhos', video:''},
-    {nome:'Contato', rota:'/contato', video:''},
+    {nome:'Home', rota:'/', video:'', icone:'mdi-home-outline'},
+    // {nome:'Sobre', rota:'/sobre', video:''},
+    {nome:'Trabalhos', rota:'/trabalhos', video:'', icone:'mdi-briefcase-outline'},
+    {nome:'Contato', rota:'/contato', video:'', icone:'mdi-message-outline'},
 ])
 
 </script>
@@ -21,13 +21,13 @@ const botoesHeader = reactive([
             overlay="linear-gradient(45deg, #374ff714, #0000006b)" 
             >
 
-            <homeComponent v-if="$route.path == '/'"
+            <!-- <homeComponent v-if="$route.path == '/'"
             titulo="Olá, seja bem vindo ao meu Portfólio!"
             text="Conheça mais sobre mim e os meus trabalhos."
-            />
+            /> -->
 
-            <homeComponent v-if="$route.path == '/sobre'"
-            titulo="Meu nome é Thiago Faria Moreira"
+            <homeComponent v-if="$route.path == '/'"
+            titulo="Olá, meu nome é Thiago Faria Moreira"
             text="Sou desenvolvedor Front-End, apaixonado pelos processos do desenvolvimento web unido com a liberdade do design,
             acredito que a união destes dois elementos é o que torna tudo tão belo no digital."
             />
@@ -51,8 +51,9 @@ const botoesHeader = reactive([
                 :to="botoes.rota">
                 <p
                 variant="text"
-                class="styleBotoes"
+                class="styleBotoes "
                 >
+                <v-icon>{{ botoes.icone }}</v-icon>
                 {{ botoes.nome }}
                 </p>
             </router-link>
@@ -65,10 +66,11 @@ const botoesHeader = reactive([
 <style scoped>
 .styleBotoes{
     text-transform: none;
-    color:#f7f7f7;
-    font-weight:400;
+    color:#c7c7c7;
+    font-weight:500;
     cursor: pointer;
     margin: 5px 0px;
+    font-family: Oswald;
 }
 .positionDivTemplate{
     flex-direction: column;

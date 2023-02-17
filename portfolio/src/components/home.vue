@@ -8,8 +8,8 @@ export default {
         ],
 
         contato:[
-            {meioContato:'E-mail', icone:'mdi-email-outline'},
-            {meioContato:'Telefone', icone:'mdi-phone-outline'},
+            {meioContato:'E-mail: thiago.fm012@gmail.com', icone:'mdi-email-outline'},
+            {meioContato:'Whatsapp: (12) 99229 1008', icone:'mdi-whatsapp'},
             {meioContato:'Linkedin', icone:'mdi-linkedin'},
         ]
     }),
@@ -33,7 +33,7 @@ export default {
 
     <div
     class=" alinhadoMeio positionConteudos"
-    v-if="$route.path == '/sobre'">
+    v-if="$route.path == '/'">
         <img
         contain
         style="max-width:350px"
@@ -67,6 +67,7 @@ export default {
     </div>
 
     <div
+    style="margin-top:56px"
     class=" alinhadoMeio positionConteudos flex-column"
     v-if="$route.path == '/contato'">
         <div
@@ -92,17 +93,20 @@ export default {
 }
 .tituloHome{
     color: #f7f7f7;
-    font-weight:400;
+    font-weight:500;
     font-size:25px;
     text-align: right;
+    font-family: Oswald;
 }
 .subtituloHome{
     color:#f7f7f7;
-    font-weight:300;
+    font-weight:400;
     font-size:18px;
     text-align: right;
     max-width:490px;
     margin-top:20px;
+    font-family: Oswald;
+
 }
 .positionTextos{
     flex-direction: column;
@@ -120,12 +124,20 @@ export default {
     color:#afafaf;
     font-size:20px;
     margin:10px 0px;
-    line-height:0.8
+    font-family: Oswald;
+    line-height:1
 }
 .tituloTrampos{
-    color:#ffffff !important;
+    color:#ffffff;
     font-size:35px;
-    line-height:1.05
+    line-height:1.25;
+    font-family: Oswald;
+}
+.tituloExemplo:hover{
+    color:#e2ad00;
+}
+.tituloTrampos:hover{
+    color:#e2ad00;
 }
 .listaContatos{
     color:#d1d1d1 !important;
@@ -134,6 +146,8 @@ export default {
     text-align: left;
     max-width:490px;
     margin-top:20px;
-    cursor: pointer
+    cursor: pointer;
+    font-family: Oswald;
+
 }
 </style>

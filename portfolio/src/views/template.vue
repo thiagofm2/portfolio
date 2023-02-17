@@ -5,8 +5,8 @@ import {ref, reactive} from 'vue';
 const botoesHeader = reactive([
     {nome:'Home', rota:'/', video:''},
     {nome:'Sobre', rota:'/sobre', video:''},
-    {nome:'Trabalhos', rota:'', video:''},
-    {nome:'Contato', rota:'', video:''},
+    {nome:'Trabalhos', rota:'/trabalhos', video:''},
+    {nome:'Contato', rota:'/contato', video:''},
 ])
 
 </script>
@@ -30,6 +30,17 @@ const botoesHeader = reactive([
             titulo="Meu nome é Thiago Faria Moreira"
             text="Sou desenvolvedor Front-End, apaixonado pelos processos do desenvolvimento web unido com a liberdade do design,
             acredito que a união destes dois elementos é o que torna tudo tão belo no digital."
+            />
+
+            <homeComponent v-if="$route.path == '/trabalhos'"
+            titulo="Confira alguns dos meus trabalhos"
+            text="Foi separado alguns exemplos dos meus trabalhos, que podem ser acessados ao clicar nas categorias ao lado. Criados
+            principalmente com o framework VueJs e seus componentes (Vuetify, Nuxt), para diversos fins."
+            />
+
+            <homeComponent v-if="$route.path == '/contato'"
+            titulo="Entre em contato"
+            text="Gostou do que viu? Entre em contato para fazer um orçamento."
             />
         
             <div class="positionDivTemplate">

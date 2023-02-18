@@ -1,5 +1,5 @@
 <script setup>
-import video from '../assets/fundo.mp4';
+import video from '../assets/video1.mp4';
 import homeComponent from '../components/home.vue'
 import {ref, reactive} from 'vue';
 const botoesHeader = reactive([
@@ -26,7 +26,8 @@ let portugues = ref(true);
             style="max-height: 100vh; height: 100vh;"
             overlay="linear-gradient(45deg, #374ff714, #0000006b)" 
             >
-            <div class="d-flex align-center" style="padding:10px 40px">
+            <div class="d-flex align-center"
+            style="padding:10px 40px; position:absolute; right:20px">
                 <p
                 @click="ingles = true; portugues = false"
                 class="styleBotoes"
@@ -139,7 +140,7 @@ let portugues = ref(true);
     flex-direction: column;
     display: flex;
     position: absolute;
-    right:50px;
+    left:50px;
     bottom:50px
 }
 .alinhadoMeio{

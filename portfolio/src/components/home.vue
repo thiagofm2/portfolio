@@ -42,7 +42,7 @@ export default {
         <img
         contain
         style="max-width:350px"
-        src="../assets/foto.jpg"/> 
+        src="../assets/foto.webp"/> 
     </div> -->
 
 <!-- TRABALHOS --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -96,21 +96,21 @@ export default {
 <style setup>
 .positionConteudos{
     position: absolute;
-    left: 20%;
+    right: 20%;
     top: 25%
 }
 .tituloHome{
     color: #f7f7f7;
     font-weight:500;
     font-size:25px;
-    text-align: right;
+    text-align: left;
     font-family: Oswald;
 }
 .subtituloHome{
     color:#f7f7f7;
     font-weight:400;
     font-size:18px;
-    text-align: right;
+    text-align: left;
     max-width:490px;
     margin-top:20px;
     font-family: Oswald;
@@ -119,7 +119,7 @@ export default {
     flex-direction: column;
     display: flex;
     position: absolute;
-    right:50px;
+    left:50px;
     top:50px
 }
 .alinhadoMeio{

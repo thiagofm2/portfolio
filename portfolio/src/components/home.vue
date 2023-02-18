@@ -8,9 +8,9 @@ export default {
         ],
 
         contato:[
-            {meioContato:'E-mail: thiago.fm012@gmail.com', icone:'mdi-email-outline'},
-            {meioContato:'Whatsapp: (12) 99229 1008', icone:'mdi-whatsapp'},
-            {meioContato:'Linkedin', icone:'mdi-linkedin'},
+            {meioContato:'E-mail: thiago.fm012@gmail.com', icone:'mdi-email-outline', rota:''},
+            {meioContato:'Whatsapp: (12) 99229 1008', icone:'mdi-whatsapp', rota:'https://api.whatsapp.com/send?phone=5512992291008'},
+            {meioContato:'Linkedin', icone:'mdi-linkedin', rota:'https://www.linkedin.com/in/thiago-faria-801923220/'},
         ]
     }),
     props:{
@@ -50,11 +50,6 @@ export default {
     data-aos-duration="2500"
     class=" alinhadoMeio positionConteudos flex-column"
     v-if="$route.path == '/trabalhos'">
-    
-        <!-- <div class="flex-column alinhadoMeio">
-            <h1>{{ trabalhos.titulo }}</h1>
-            <p>{{ trabalhos.text }}</p>
-        </div> -->
         <v-list style="background-color: transparent; margin:0px">
             <a style="text-decoration: none;"
             v-for="(trabalhos, index) in jobs"
@@ -83,12 +78,14 @@ export default {
         v-for="(redes, i) in contato"
         :key="i"
         class="d-flex align-self-start">
-            <p class="listaContatos alinhadoMeio">
-                <v-icon style="margin-right:10px">
-                    {{redes.icone }}
-                </v-icon>
-                {{ redes.meioContato }}
-            </p>
+            <a :href="redes.rota" style="text-decoration: none">
+                <p class="listaContatos alinhadoMeio">
+                    <v-icon style="margin-right:10px">
+                        {{redes.icone }}
+                    </v-icon>
+                    {{ redes.meioContato }}
+                </p>
+            </a>
         </div>   
     </div>
 </v-container>
@@ -115,7 +112,6 @@ export default {
     max-width:490px;
     margin-top:20px;
     font-family: Oswald;
-
 }
 .positionTextos{
     flex-direction: column;

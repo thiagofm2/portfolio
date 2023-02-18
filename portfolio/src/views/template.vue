@@ -1,5 +1,6 @@
 <script setup>
 import video from '../assets/video1.mp4';
+import video2 from '../assets/video2.mp4';
 import homeComponent from '../components/home.vue'
 import {ref, reactive} from 'vue';
 const botoesHeader = reactive([
@@ -14,16 +15,17 @@ const botoesIngles = reactive([
 ]);
 let ingles = ref(false);
 let portugues = ref(true);
-
+let bgVideo = ref(video);
 </script>
 
 <template>
     <v-container fluid>
         <v-row style="margin: -16px;">
+            <!-- -->
         <video-background
             class="alinhadoMeio" 
-            :src="video"
-            style="max-height: 100vh; height: 100vh;"
+            :src="$route.path == '/'? video2 : video" 
+            style="max-height: 100vh; height: 100vh; background-color: #000000;"
             overlay="linear-gradient(45deg, #374ff714, #0000006b)" 
             >
             <div class="d-flex align-center botoesIdioma">

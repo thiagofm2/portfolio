@@ -24,7 +24,9 @@ export default {
     <div
     class="positionTextos" 
     data-aos="fade-in"
-    data-aos-duration="2500">
+    data-aos-duration="2500"
+    data-aos-delay="500"
+    >
         <h1 class="tituloHome">
             {{titulo}}
         </h1>
@@ -48,6 +50,7 @@ export default {
     <div
     data-aos="fade-in"
     data-aos-duration="2500"
+    data-aos-delay="500"
     class=" alinhadoMeio positionConteudos trabalhosMobile flex-column"
     v-if="$route.path == '/trabalhos'">
         <v-list style="background-color: transparent; margin:0px">
@@ -72,6 +75,7 @@ export default {
     <div
     data-aos="fade-in"
     data-aos-duration="2500"
+    data-aos-delay="500"
     style="margin-top:56px"
     class=" alinhadoMeio positionConteudos flex-column"
     v-if="$route.path == '/contato'">

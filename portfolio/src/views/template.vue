@@ -170,6 +170,7 @@ let bgVideo = ref(video);
 }
 .styleBotoes:hover{
     color:#e2ad00;
+    transition: 0.8s ease;
 }
 .botoesIdioma{
     padding:10px 40px;

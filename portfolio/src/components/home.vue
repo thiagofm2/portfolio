@@ -170,9 +170,13 @@ export default {
 }
 .tituloExemplo:hover{
     color:#e2ad00;
+    transition: 0.8s ease;
+
 }
 .tituloTrampos:hover{
     color:#e2ad00;
+    transition: 0.8s ease;
+
 }
 .listaContatos{
     color:#d1d1d1;
@@ -186,5 +190,7 @@ export default {
 }
 .listaContatos:hover{
     color:#e2ad00;
+    transition: 0.8s ease;
+
 }
 </style>

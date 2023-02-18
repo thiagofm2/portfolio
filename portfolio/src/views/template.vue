@@ -1,63 +1,126 @@
 <script setup>
-import video from '../assets/techVid.mp4';
+import video from '../assets/fundo.mp4';
 import homeComponent from '../components/home.vue'
 import {ref, reactive} from 'vue';
 const botoesHeader = reactive([
-    {nome:'Home', rota:'/', video:'', icone:'mdi-home-outline'},
-    // {nome:'Sobre', rota:'/sobre', video:''},
+    {nome:'Início', rota:'/', video:'', icone:'mdi-home-outline'},
     {nome:'Trabalhos', rota:'/trabalhos', video:'', icone:'mdi-briefcase-outline'},
     {nome:'Contato', rota:'/contato', video:'', icone:'mdi-message-outline'},
-])
+]);
+const botoesIngles = reactive([
+    {nome:'Home', rota:'/', video:'', icone:'mdi-home-outline'},
+    {nome:'Jobs', rota:'/trabalhos', video:'', icone:'mdi-briefcase-outline'},
+    {nome:'Contact', rota:'/contato', video:'', icone:'mdi-message-outline'},
+]);
+let ingles = ref(false);
+let portugues = ref(true);
 
 </script>
 
 <template>
     <v-container fluid>
         <v-row style="margin: -16px;">
-            <video-background
+        <video-background
             class="alinhadoMeio" 
             :src="video"
             style="max-height: 100vh; height: 100vh;"
             overlay="linear-gradient(45deg, #374ff714, #0000006b)" 
             >
-
-            <!-- <homeComponent v-if="$route.path == '/'"
-            titulo="Olá, seja bem vindo ao meu Portfólio!"
-            text="Conheça mais sobre mim e os meus trabalhos."
-            /> -->
-
-            <homeComponent v-if="$route.path == '/'"
+            <div class="d-flex align-center" style="padding:10px 40px">
+                <p
+                @click="ingles = true; portugues = false"
+                class="styleBotoes"
+                style="margin-right:10px">
+                    EN
+                </p>
+                <v-divider vertical color="#f7f7f7"></v-divider>
+                <p
+                @click="ingles = false; portugues = true"
+                class="styleBotoes"
+                style="margin-left:10px">
+                    PT-BR
+                </p>
+            </div>
+<!-- HOME -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+            <homeComponent
+            v-if="$route.path == '/' && portugues == true"
             titulo="Olá, meu nome é Thiago Faria Moreira"
-            text="Sou desenvolvedor Front-End, apaixonado pelos processos do desenvolvimento web unido com a liberdade do design,
+            text="Sou desenvolvedor Front-End, apaixonado pelo processo do desenvolvimento web unido com a liberdade do design,
             acredito que a união destes dois elementos é o que torna tudo tão belo no digital."
             />
 
-            <homeComponent v-if="$route.path == '/trabalhos'"
+            <homeComponent
+            v-if="$route.path == '/' && portugues == false"
+            titulo="Hello, my name is Thiago Faria Moreira"
+            text="I am a Front-End developer, passionate about the process of web development united with the freedom of design,
+            I believe that the union of these two elements is what makes everything so beautiful in digital."
+            />
+<!-- TRABALHOS --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+            <homeComponent
+            v-if="$route.path == '/trabalhos' && portugues == true"
             titulo="Confira alguns dos meus trabalhos"
             text="Foi separado alguns exemplos dos meus trabalhos, que podem ser acessados ao clicar nas categorias ao lado. Criados
             principalmente com o framework VueJs e seus componentes (Vuetify, Nuxt), para diversos fins."
             />
 
-            <homeComponent v-if="$route.path == '/contato'"
-            titulo="Entre em contato"
-            text="Gostou do que viu? Entre em contato para fazer um orçamento."
+            <homeComponent
+            v-if="$route.path == '/trabalhos' && portugues == false"
+            titulo="Check out some of my work"
+            text="I have separated some examples of my work, which can be accessed by clicking on the categories at the side. Created
+            mainly with the VueJs framework and its components (Vuetify, Nuxt), for various purposes."
             />
-        
-            <div class="positionDivTemplate">
-            <router-link
-                style="text-decoration: none;"
-                v-for="(botoes, i) in botoesHeader"
-                :key="i"
-                :to="botoes.rota">
-                <p
-                variant="text"
-                class="styleBotoes "
-                >
-                <v-icon>{{ botoes.icone }}</v-icon>
-                {{ botoes.nome }}
-                </p>
-            </router-link>
-        </div>
+<!-- CONTATOS ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+            <homeComponent
+            v-if="$route.path == '/contato' && portugues == true"
+            titulo="Entre em contato"
+            text="Ficou interessado? Entre em contato para fazer um orçamento."
+            />
+
+            <homeComponent
+            v-if="$route.path == '/contato' && portugues == false"
+            titulo="Contact us"
+            text="Are you interested? Contact us for a quote."
+            />
+<!-- MENU -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->   
+            <div
+            data-aos="fade-in"
+            data-aos-duration="2500"
+            v-if="portugues == true"
+            class="positionDivTemplate">
+                <router-link
+                    style="text-decoration: none;"
+                    v-for="(botoes, i) in botoesHeader"
+                    :key="i"
+                    :to="botoes.rota">
+                    <p
+                    variant="text"
+                    class="styleBotoes "
+                    >
+                    <v-icon>{{ botoes.icone }}</v-icon>
+                    {{ botoes.nome }}
+                    </p>
+                </router-link>
+            </div>
+
+            <div
+            data-aos="fade-in"
+            data-aos-duration="2500"
+            v-if="portugues == false"
+            class="positionDivTemplate">
+                <router-link
+                    style="text-decoration: none;"
+                    v-for="(botoes, i) in botoesIngles"
+                    :key="i"
+                    :to="botoes.rota">
+                    <p
+                    variant="text"
+                    class="styleBotoes "
+                    >
+                    <v-icon>{{ botoes.icone }}</v-icon>
+                    {{ botoes.nome }}
+                    </p>
+                </router-link>
+            </div>
         </video-background>
         </v-row>
     </v-container>

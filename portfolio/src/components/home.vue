@@ -22,7 +22,10 @@ export default {
 
 <template>
 <v-container fluid>
-    <div class="positionTextos">
+    <div
+    class="positionTextos" 
+    data-aos="fade-in"
+    data-aos-duration="2500">
         <h1 class="tituloHome">
             {{titulo}}
         </h1>
@@ -32,6 +35,8 @@ export default {
     </div>
 
     <div
+    data-aos="fade-in"
+    data-aos-duration="2500"
     class=" alinhadoMeio positionConteudos"
     v-if="$route.path == '/'">
         <img
@@ -41,6 +46,8 @@ export default {
     </div>
     
     <div
+    data-aos="fade-in"
+    data-aos-duration="2500"
     class=" alinhadoMeio positionConteudos flex-column"
     v-if="$route.path == '/trabalhos'">
     
@@ -67,6 +74,8 @@ export default {
     </div>
 
     <div
+    data-aos="fade-in"
+    data-aos-duration="2500"
     style="margin-top:56px"
     class=" alinhadoMeio positionConteudos flex-column"
     v-if="$route.path == '/contato'">
@@ -125,7 +134,7 @@ export default {
     font-size:20px;
     margin:10px 0px;
     font-family: Oswald;
-    line-height:1
+    line-height:1.2
 }
 .tituloTrampos{
     color:#ffffff;
@@ -140,7 +149,7 @@ export default {
     color:#e2ad00;
 }
 .listaContatos{
-    color:#d1d1d1 !important;
+    color:#d1d1d1;
     font-weight:300;
     font-size:20px;
     text-align: left;
@@ -148,6 +157,8 @@ export default {
     margin-top:20px;
     cursor: pointer;
     font-family: Oswald;
-
+}
+.listaContatos:hover{
+    color:#e2ad00;
 }
 </style>

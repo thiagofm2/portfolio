@@ -1,5 +1,4 @@
 <script setup>
-import video from '../assets/video1.mp4';
 import video2 from '../assets/video2.mp4';
 import homeComponent from '../components/home.vue'
 import {ref, reactive} from 'vue';
@@ -15,7 +14,6 @@ const botoesIngles = reactive([
 ]);
 let ingles = ref(false);
 let portugues = ref(true);
-let bgVideo = ref(video);
 </script>
 
 <template>
@@ -23,12 +21,14 @@ let bgVideo = ref(video);
         <v-row style="margin: -16px;">
             <!-- -->
         <video-background
+            :class="[$route.path == '/'? 'focado' : 'desfocado']"
             class="alinhadoMeio" 
-            :src="$route.path == '/'? video2 : video" 
+            :src="video2" 
             style="max-height: 100vh; height: 100vh; background-color: #000000;"
             overlay="linear-gradient(45deg, #374ff714, #0000006b)" 
             >
-            <div class="d-flex align-center botoesIdioma">
+        </video-background>
+        <div class="d-flex align-center botoesIdioma">
                 <p
                 @click="ingles = true; portugues = false"
                 class="styleBotoes"
@@ -90,6 +90,7 @@ let bgVideo = ref(video);
             v-if="portugues == true"
             class="positionDivTemplate">
                 <router-link
+                    
                     style="text-decoration: none;"
                     v-for="(botoes, i) in botoesHeader"
                     :key="i"
@@ -123,7 +124,6 @@ let bgVideo = ref(video);
                     </p>
                 </router-link>
             </div>
-        </video-background>
         </v-row>
     </v-container>
 </template>
@@ -176,5 +176,14 @@ let bgVideo = ref(video);
     padding:10px 40px;
     position:absolute;
     right:20px
+}
+.desfocado{
+    transform: scale(1.1);
+    filter: blur(6px);
+    transition: 2s ease;
+}
+.focado{
+    filter: blur(0);
+    transition: 2s ease;
 }
 </style>

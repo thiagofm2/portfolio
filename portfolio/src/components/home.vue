@@ -34,7 +34,7 @@ export default {
         </p>
     </div>
 
-    <div
+    <!-- <div
     data-aos="fade-in"
     data-aos-duration="2500"
     class=" alinhadoMeio positionConteudos"
@@ -43,8 +43,9 @@ export default {
         contain
         style="max-width:350px"
         src="../assets/foto.jpg"/> 
-    </div>
-    
+    </div> -->
+
+<!-- TRABALHOS --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
     <div
     data-aos="fade-in"
     data-aos-duration="2500"
@@ -68,6 +69,7 @@ export default {
         </v-list>
     </div>
 
+<!-- CONTATOS ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
     <div
     data-aos="fade-in"
     data-aos-duration="2500"

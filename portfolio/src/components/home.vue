@@ -2,9 +2,9 @@
 export default {
     data: () => ({
         jobs: [
-            {nome:'Marketplace', subtitulo:'Marketplace feito', rota:'https://houseus.com.br/', numero:'1', numero:'Exemplo 1'},
-            {nome:'Landing Page', subtitulo:'', rota:'https://tonellipneus.com.br/unidades/bauru/', numero:'Exemplo 2'},
-            {nome:'Site Institucional', subtitulo:'', rota:'https://proclinicasjc.com.br/exame', numero:'Exemplo 3'},
+            {nome:'Marketplace', subtitulo:'Marketplace feito', rota:'https://houseus.com.br/', numero:'1', numero:'1'},
+            {nome:'Landing Page', subtitulo:'', rota:'https://tonellipneus.com.br/unidades/bauru/', numero:'2'},
+            {nome:'Site Institucional', subtitulo:'', rota:'https://proclinicasjc.com.br/exame', numero:'3'},
         ],
         contato:[
             {meioContato:'E-mail: thiago.fm012@gmail.com', icone:'mdi-email-outline', rota:''},

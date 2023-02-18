@@ -26,8 +26,7 @@ let portugues = ref(true);
             style="max-height: 100vh; height: 100vh;"
             overlay="linear-gradient(45deg, #374ff714, #0000006b)" 
             >
-            <div class="d-flex align-center"
-            style="padding:10px 40px; position:absolute; right:20px">
+            <div class="d-flex align-center botoesIdioma">
                 <p
                 @click="ingles = true; portugues = false"
                 class="styleBotoes"
@@ -128,6 +127,17 @@ let portugues = ref(true);
 </template>
 
 <style scoped>
+@media (min-device-width: 320px) and (max-device-width: 640px) {
+    .positionDivTemplate{
+        left:20px !important;
+    }
+    .botoesIdioma{
+        right:0px;
+        left:20px !important;
+        padding:10px 0px !important;
+
+    }
+}
 .styleBotoes{
     text-transform: none;
     color:#c7c7c7;
@@ -158,5 +168,10 @@ let portugues = ref(true);
 }
 .styleBotoes:hover{
     color:#e2ad00;
+}
+.botoesIdioma{
+    padding:10px 40px;
+    position:absolute;
+    right:20px
 }
 </style>

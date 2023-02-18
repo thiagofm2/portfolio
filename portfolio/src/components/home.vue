@@ -6,7 +6,6 @@ export default {
             {nome:'Landing Page', subtitulo:'', rota:'https://tonellipneus.com.br/unidades/bauru/', numero:'Exemplo 2'},
             {nome:'Site Institucional', subtitulo:'', rota:'https://proclinicasjc.com.br/exame', numero:'Exemplo 3'},
         ],
-
         contato:[
             {meioContato:'E-mail: thiago.fm012@gmail.com', icone:'mdi-email-outline', rota:''},
             {meioContato:'Whatsapp: (12) 99229 1008', icone:'mdi-whatsapp', rota:'https://api.whatsapp.com/send?phone=5512992291008'},
@@ -49,14 +48,14 @@ export default {
     <div
     data-aos="fade-in"
     data-aos-duration="2500"
-    class=" alinhadoMeio positionConteudos flex-column"
+    class=" alinhadoMeio positionConteudos trabalhosMobile flex-column"
     v-if="$route.path == '/trabalhos'">
         <v-list style="background-color: transparent; margin:0px">
             <a style="text-decoration: none;"
             v-for="(trabalhos, index) in jobs"
             :key="index"
             :href="trabalhos.rota">
-                <v-list-item
+                <v-list-item class="mgListMobile"
                 style="margin:20px 0px; padding:0px;">
                     <v-list-item-subtitle class="tituloExemplo">
                        {{trabalhos.numero}} 
@@ -94,6 +93,31 @@ export default {
 </template>
 
 <style setup>
+@media (min-device-width: 320px) and (max-device-width: 640px) {
+    .positionTextos{
+        left:20px !important;      
+    }
+    .subtituloHome{
+        max-width:315px !important;
+    }
+    .tituloExemplo{
+        font-size:15px !important;
+        line-height:1.1 !important
+    }
+    .tituloTrampos{
+        font-size:20px !important;
+        line-height:1.16 !important;
+    }
+    .mgListMobile{
+        margin: 5px 0px !important
+    }
+    .trabalhosMobile{
+        right: 0px;
+        left: 20px !important;
+        bottom: 85px !important;
+        align-items: start !important;
+    }
+}
 .positionConteudos{
     position: absolute;
     right: 20%;

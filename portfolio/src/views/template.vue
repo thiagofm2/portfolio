@@ -178,7 +178,7 @@ let portugues = ref(true);
     right:20px
 }
 .desfocado{
-    transform: scale(1.1);
+    transform: scale(1.15);
     filter: blur(6px);
     transition: 2s ease;
 }
